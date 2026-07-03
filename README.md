@@ -6,7 +6,6 @@ stacked ensemble of linear and gradient-boosted models. Built for the Kaggle
 competition.
 
 **Best cross-validated score:** RMSE **0.1075** (log SalePrice, 5×3 RepeatedKFold)
-**Public leaderboard:** _`<add your score after submitting>`_
 
 ---
 
