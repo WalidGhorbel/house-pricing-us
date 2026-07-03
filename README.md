@@ -1,4 +1,4 @@
-# House Prices — Advanced Regression (Ames, Iowa)
+# House Prices: Advanced Regression 
 
 Predicting residential sale prices from 79 explanatory features using a tuned,
 stacked ensemble of linear and gradient-boosted models. Built for the Kaggle
