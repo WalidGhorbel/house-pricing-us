@@ -92,10 +92,6 @@ optimal combination from out-of-fold predictions.
 | Equal blend | 0.1077 |
 | Best-3 blend | 0.1085 |
 
-The stack wins, and beats every single model — the base learners make partly
-*uncorrelated* errors (linear vs tree vs foundation), so combining them cancels
-error.
-
 ---
 
 ## Validation methodology
