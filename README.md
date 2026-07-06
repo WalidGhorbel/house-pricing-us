@@ -21,21 +21,6 @@ why every modelling decision here works in log space.
 
 ---
 
-## Approach at a glance
-
-```
-raw CSV
-  └─ outlier removal (2 documented bad sales)
-      └─ missing-value handling ("NA = absent", not "missing")
-          └─ ordinal encoding (quality scales → ordered integers)
-              └─ feature engineering (mechanism-justified)
-                  └─ skew correction + one-hot encoding
-                      └─ 6 tuned base models (Optuna)
-                          └─ stacked ensemble (meta-model)
-                              └─ submission
-```
-
----
 
 ## Pipeline detail
 
