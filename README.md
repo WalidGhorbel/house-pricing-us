@@ -105,13 +105,9 @@ pip install numpy pandas scipy scikit-learn xgboost lightgbm catboost optuna
 1. Place `train.csv` and `test.csv` in the data folder.
 2. Run the notebook top to bottom. Cells are ordered: setup → EDA →
    cleaning → feature engineering → Optuna tuning → ensemble → submission.
-3. **Tuning takes ~1 hour** across the three boosting models. The best
+3. **Tuning ** across the three boosting models. The best
    hyperparameters found are hardcoded in the "rebuild" cell so the pipeline
    can be reproduced in minutes without re-searching.
-4. Output: `submission_tuned_stack.csv`, ready to upload to Kaggle.
-
-> **Tip:** tuning is expensive — persist the tuned models/params to disk right
-> after searching so a runtime disconnect can't cost you the work.
 
 ---
 
