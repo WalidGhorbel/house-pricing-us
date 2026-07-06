@@ -92,35 +92,9 @@ optimal combination from out-of-fold predictions.
 | Equal blend | 0.1077 |
 | Best-3 blend | 0.1085 |
 
----
 
-## Validation methodology
-
-Every comparison uses **RepeatedKFold (5 folds × 3 repeats)** rather than a single
-split, so scores are averaged over 15 fits and are not an artifact of one lucky
-partition.
-
-**A note on honesty:** cross-validation is an *estimate*, and on this competition
-it runs optimistic relative to the leaderboard (CV reuses the same homes). Model
-selection is done on CV; the leaderboard is treated as the final judge. Several
-tempting techniques (weight-optimised blending, target encoding) were tested and
-**rejected** because they improved CV without improving held-out performance —
-classic overfitting, caught by honest validation.
 
 ---
-
-## Results & diagnostics
-
-- **Predicted vs actual (out-of-fold):** tight clustering along the diagonal;
-  larger errors only at the price extremes (cheap and luxury homes), where
-  training examples are sparse.
-- **Residuals:** random scatter around zero — no systematic bias.
-- **Feature importance:** engineered features (`Qual_x_TotalSF`, `OverallQual_2`,
-  `TotalQualScore`) rank among the most important, validating the
-  mechanism-first engineering.
-
----
-
 ## Reproducing
 
 ```bash
@@ -141,36 +115,9 @@ pip install numpy pandas scipy scikit-learn xgboost lightgbm catboost optuna
 
 ---
 
-## Project structure
 
-```
-house-prices/
-├── README.md
-├── house_prices_pipeline.ipynb   # full notebook: EDA → model → submission
-├── data/
-│   ├── train.csv
-│   ├── test.csv
-│   └── data_description.txt
-└── submissions/
-    └── submission_tuned_stack.csv
-```
 
----
-
-## Key takeaways
-
-- **Data understanding beat model complexity.** The "NA = absent" insight and
-  mechanism-justified features mattered more than any single algorithm.
-- **Honest validation is the real skill.** Every model converged near the same
-  score; the discipline was in *rejecting* improvements that only looked good on
-  CV, and in refusing data-leakage shortcuts that inflate leaderboard scores on
-  this particular competition.
-- **The ensemble earns its keep** by combining uncorrelated error patterns, not
-  by adding complexity for its own sake.
-
----
-
-## Acknowledgements
+## Sources
 
 Data: Dean De Cock, *"Ames, Iowa: Alternative to the Boston Housing Data Set"*,
 Journal of Statistics Education (2011). Competition hosted by Kaggle.
